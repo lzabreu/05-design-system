@@ -4,10 +4,11 @@
 		"packages/*"
 	],
 	"scripts": {
-		"dev": "turbo run dev --parallel"
+		"dev": "turbo run dev --parallel",
+		"build": "turbo run build"
 	},
 	"license": "MIT",
-	"devDependencies": {
-		"turbo": "^1.10.7"
+	"dependencies": {
+		"turbo": "^1.10.6"
 	}
 }
