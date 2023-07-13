@@ -8,7 +8,8 @@
     "dev": "storybook dev -p 6006",
     "build": "storybook build",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "deploy-storybook": "storybook-to-gh-pages"
   },
   "keywords": [],
   "author": "",
@@ -21,6 +22,7 @@
     "@storybook/builder-vite": "^7.0.26",
     "@storybook/react": "^7.0.26",
     "@storybook/react-vite": "^7.0.26",
+    "@storybook/storybook-deployer": "^2.8.16",
     "@storybook/testing-library": "^0.0.14-next.2",
     "@vitejs/plugin-react": "^4.0.3",
     "prop-types": "^15.8.1",
