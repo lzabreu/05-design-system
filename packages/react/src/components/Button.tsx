@@ -1,29 +1,82 @@
-import { ComponentProps } from 'react'
+import { ComponentProps, ElementType } from 'react'
 import { styled } from '../styles'
 
 export const Button = styled('button', {
+  all: 'unset',
   fontFamily: '$default',
-  backgroundColor: '$ignite300',
+  fontSize: '$sm',
   borderRadius: '$sm',
+  boxSizing: 'border-box',
   border: 0,
-  fontWeight: '$bold',
-  color: '$white',
+  fontWeight: '$medium',
+  minWidth: 120,
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  gap: '$2',
+  cursor: 'pointer',
+  padding: '0 $4',
+
+  svg: {
+    width: '$4',
+    height: '$4',
+  },
+
+  '&:disabled': {
+    cursor: 'not-allowed',
+  },
 
   variants: {
-    size: {
-      small: {
-        fontSize: '$xs',
-        padding: '$2 $4',
+    variant: {
+      primary: {
+        color: '$white',
+        backgroundColor: '$ignite500',
+        '&:not(:disabled):hover': {
+          backgroundColor: '$ignite300',
+        },
+        '&:disabled': {
+          backgroundColor: '$gray200',
+        },
       },
-      big: {
-        fontSize: '$md',
-        padding: '$3 $6',
+      secondary: {
+        color: '$ignite300',
+        border: '2px solid $ignite500',
+        '&:not(:disabled):hover': {
+          backgroundColor: '$ignite500',
+          color: '$white',
+        },
+        '&:disabled': {
+          borderColor: '$gray200',
+          color: '$gray200',
+        },
+      },
+      tertiary: {
+        color: '$gray100',
+        '&:not(:disabled):hover': {
+          color: '$white',
+        },
+        '&:disabled': {
+          color: '$gray600',
+        },
+      },
+    },
+    size: {
+      sm: {
+        height: 38,
+      },
+      md: {
+        height: 46,
       },
     },
   },
   defaultVariants: {
-    size: 'small',
+    variant: 'primary',
+    size: 'md',
   },
 })
 
-export type ButtonProps = ComponentProps<typeof Button>
+export interface ButtonProps extends ComponentProps<typeof Button> {
+  as?: ElementType
+}
+
+Button.displayName = 'Button'

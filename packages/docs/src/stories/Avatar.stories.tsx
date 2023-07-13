@@ -7,8 +7,18 @@ export default {
   component: Avatar,
   tags:['autodocs'],
   args: {
-    src: "https://github.com/diego3g.png",
-    alt: "Diego Fernandes"
+    src: "https://github.com/lzabreu.png",
+    alt: "Luciano Abreu"
+  },
+  argTypes: {
+    label: {
+      description: "Informação adicional sobre o avatar"
+    },
+    src: {
+      control: {
+        type: "text"
+      }
+    }
   }
 
 } as Meta<AvatarProps>
