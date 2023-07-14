@@ -1,5 +1,5 @@
 {
-	"private": true,
+	"private": false,
 	"workspaces": [
 		"packages/*"
 	],
@@ -8,7 +8,9 @@
 		"build": "turbo run build",
 		"changeset": "changeset",
 		"version-packages": "changeset version",
-		"release": "turbo run build --filter=@lzabreu-ui/docs && changeset publish"
+		"publish": "changeset publish",
+		"turbo": "turbo run build --filter=@lzabreu-ui/docs",
+		"release": "turbo run build --filter=packages/docs && changeset publish"
 	},
 	"license": "MIT",
 	"dependencies": {
