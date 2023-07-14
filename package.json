@@ -9,8 +9,8 @@
 		"changeset": "changeset",
 		"version-packages": "changeset version",
 		"publish": "changeset publish",
-		"turbo": "turbo run build --filter=@lzabreu-ui/docs",
-		"release": "turbo run build --filter=packages/docs && changeset publish"
+		"turbo": "turbo run build --filter=!docs",
+		"release": "turbo run build --filter=!docs && changeset publish"
 	},
 	"license": "MIT",
 	"dependencies": {
